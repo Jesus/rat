@@ -18,6 +18,8 @@ gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+gem 'jquery-rails', '~> 4.3.3'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -30,7 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'hamlit'
+
 gem 'bootstrap'
+gem 'local_time'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
