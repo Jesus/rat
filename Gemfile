@@ -8,6 +8,7 @@ gem 'puma', path: '../puma'
 
 gem 'sqlite3', '~> 1.4'
 gem 'sass-rails', '~> 5'
+gem 'bootstrap'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
