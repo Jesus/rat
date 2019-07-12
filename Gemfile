@@ -5,6 +5,7 @@ ruby '2.6.2'
 
 gem 'rails', path: '../rails'
 gem 'puma', path: '../puma'
+gem 'puma-websockets', path: '../puma-websockets'
 
 gem 'sqlite3', '~> 1.4'
 gem 'sass-rails', '~> 5'
