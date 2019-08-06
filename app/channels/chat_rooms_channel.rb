@@ -1,16 +1,26 @@
 class ChatRoomsChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "chat_rooms_#{params['chat_room_id']}_channel"
+    stream_from "chat_room"
   end
 
+  # def subscribed
+  #   ActionCable.server.broadcast current_user, current_user
+  # end
+
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
   end
 
   def send_message(data)
-    current_user.messages.create!({
-      body: data['message'],
-      chat_room_id: data['chat_room_id']
+    ActionCable.server.broadcast("chat_room", {
+      message: render_message(data['message'])
+    })
+  end
+
+  def render_message(message)
+    Rails.logger.warn "[[[#{message}]]]"
+    ChatRoomsController.render({
+      partial: 'chat_rooms/message',
+      locals: { user: current_user, message: message }
     })
   end
 end

@@ -3,18 +3,14 @@ module ApplicationCable
     identified_by :current_user
 
     def connect
-      self.current_user = find_verified_user
-      logger.add_tags 'ActionCable', current_user.email
+      self.current_user = generate_user_name
+      logger.add_tags 'ActionCable', current_user
     end
 
     private
 
-    def find_verified_user # this checks whether a user is authenticated with devise
-      if verified_user = env['warden'].user
-        verified_user
-      else
-        reject_unauthorized_connection
-      end
+    def generate_user_name
+      Faker::Creature::Animal.name
     end
   end
 end

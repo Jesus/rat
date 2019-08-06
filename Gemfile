@@ -14,13 +14,13 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-gem 'devise'
-
 gem 'hamlit'
 gem 'coffee-rails'
 gem 'jquery-rails'
 
 gem 'local_time'
+
+gem 'faker'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

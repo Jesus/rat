@@ -1,7 +1,12 @@
-<h1>Chat rooms</h1>
+<h1>🐀</h1>
 
-<p class="lead"><%= link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary' %></p>
+<div id="messages"></div>
 
-<ul>
-  <%= render @chat_rooms %>
-</ul>
+<%= form_for :message, { url: '#', html: { id: 'new_message' } } do |f| %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_field :body, class: 'form-control' %>
+  </div>
+
+  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+<% end %>
