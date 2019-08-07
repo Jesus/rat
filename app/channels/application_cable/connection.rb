@@ -10,7 +10,7 @@ module ApplicationCable
     private
 
     def generate_user_name
-      Faker::Creature::Animal.name
+      "#{Faker::Creature::Animal.name}_#{rand(10000)}@hotmail.com"
     end
   end
 end
