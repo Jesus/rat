@@ -9,7 +9,7 @@ $(function() {
       disconnected: function() {},
       received: function(data) {
         if (data.hasOwnProperty('user')) {
-          messages.prepend(`<h2>Hi ${data.user}, welcome!</h2>`);
+          messages.append(`<p><b>${data.user}</b> has joined.</p>`);
         } else if (data.hasOwnProperty('message')) {
           messages.append(data['message']);
         }
