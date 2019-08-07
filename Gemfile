@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
-gem 'rails', path: '../rails'
-gem 'puma', path: '../puma'
-gem 'puma-websockets', path: '../puma-websockets'
+gem 'rails', '6.0.0.rc1'
+gem 'puma', '4.0.1'
+# gem 'puma-websockets', path: '../puma-websockets'
 
 gem 'sqlite3', '~> 1.4'
 gem 'sass-rails', '~> 5'
