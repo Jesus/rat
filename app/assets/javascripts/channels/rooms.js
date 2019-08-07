@@ -3,18 +3,20 @@ $(function() {
 
   if ($('#messages').length > 0) {
     App.global_chat = App.cable.subscriptions.create({
-      channel: "ChatRoomsChannel",
-      chat_room_id: messages.data('chat-room-id'),
+      channel: "ChatRoomsChannel"
     }, {
       connected: function() {},
       disconnected: function() {},
       received: function(data) {
-        messages.append(data['message']);
+        if (data.hasOwnProperty('user')) {
+          messages.prepend(`<h2>Hi ${data.user}, welcome!</h2>`);
+        } else if (data.hasOwnProperty('message')) {
+          messages.append(data['message']);
+        }
       },
-      send_message: function(message, chat_room_id) {
+      send_message: function(message) {
         return this.perform('send_message', {
-          message: message,
-          chat_room_id: chat_room_id
+          message: message
         });
       }
     });
